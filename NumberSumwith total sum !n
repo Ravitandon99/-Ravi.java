@@ -1,0 +1,75 @@
+import java.util.Scanner;
+
+public class AnsTest {
+
+ public static void main(String[] args)
+    {
+       
+            AnsTest at = new AnsTest();
+            at.input();
+            at.numCount();
+        }//main end;
+    int n;
+    int i ;
+    int c1;
+    int count;
+    int t;
+    int rev=0;
+    int rem=0;
+    int ans;
+int temp;
+
+    void input() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter your number here");
+        n = sc.nextInt();
+
+    }
+
+    void numCount() {
+        for (i = 1; i <= n; i++) {
+            int cc = i;
+            String nn = Integer.toString(cc);
+
+
+            count = nn.length();
+            //System.out.println(cc);
+
+
+            if (count % 2 != 0) {
+                c1 = count * 2;
+
+            } else if (count % 2 == 0 && count % 4 != 0) {
+                c1 = count * 3;
+            } else {
+                c1 = count * 4;
+            }
+            t = t + c1;
+          // System.out.println(i + "number of degit is = " + count + " and multiple is :" + c1);
+        }
+        //System.out.println(" total number sum = " + t);//t=24;
+        while(t!=0) {
+            rem =rem+(t % 10);  //rem = 4,2
+            t = t / 10;
+            if (t == 0) {
+                if (rem > 9) {
+                    t = rem;
+                    rem= 0;
+                }
+            }
+
+
+
+        }
+        System.out.println("final sum of degit sum =" + rem);
+    }//numcount method end;
+}//public class end ;
+
+
+
+
+
+
+
+
+
